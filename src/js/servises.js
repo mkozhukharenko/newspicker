@@ -13,7 +13,7 @@ newspickerServices.factory('NewsList', ['$resource',
         get: {method:'GET', params:{ 
             searchOrId: 'search',
             apiKey:'qfz35s8d5vk4xwm237brcfzw',
-            showFields: 'headline,standfirst,main,shortUrl,firstPublicationDate,thumbnail,trailText,sectionName',
+            showFields: 'headline,standfirst,main,<shortUr></shortUr>l,firstPublicationDate,thumbnail,trailText,sectionName',
             // pageSize: '10',
             fromDate: '2015-03-12',
             toDate: '2015-03-12'
