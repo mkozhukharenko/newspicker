@@ -1,0 +1,93 @@
+<div class="container">
+	
+	<div class="row" ng-controller="datepickerCtrl">
+		<div class="col-sm-12">
+			<h1>Pick date - get news!</h1>
+			<!-- <h1>foo{{foo}}</h1> -->
+			<!-- <h1>boo{{boo}}</hs1> -->
+		</div>
+
+		<div class="col-sm-3"  >
+			<div class="row">
+				<!-- <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre> -->
+				<div datepicker='' ng-model="dt" min-date="minDate" class="well well-sm"></div>				
+			</div>
+
+			<div class="row">
+				<!-- <div class="col-md-12"> -->
+				<p class="input-group">
+					<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+				</p>
+				<!-- </div> -->
+			</div> 
+
+			<hr />
+			<div class="row">
+				<!-- <button type="button" class="btn btn-sm btn-info" ng-click="today()">XXX</button> -->
+				<!-- <button type="button" class="btn btn-sm btn-default" ng-click="dt = '1999-01-01'">XXX</button> -->
+
+			</div>
+		</div>
+
+		<div class="col-sm-9" >
+			<!-- ng-controller="getNewsCtrl" -->
+			<div class="col-sm-12">
+				
+				<div class="col-sm-4" >
+					<form class="form-horizontal">
+						<div class="form-group form-group-md ">
+							<label class="col-sm-4 control-label" for="category">Category:</label>
+							<div class="col-sm-8">
+								<select class="form-control" ng-model="currentCategory" ng-options="f for f in categories">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				
+				<div class="col-sm-3" >
+					<div class="form-group">
+						<div class="right-inner-addon">
+							<span class="glyphicon glyphicon-search"></span>
+							<input type="search" class="form-control" ng-model="query" placeholder="Search"/>
+						</div>
+					</div>
+					<!-- Search: <input ng-model="query"> -->
+				</div>
+
+
+			</div>
+
+			<ul class="news list-unstyled" >
+				<li  ng-repeat="item in news | filter: {$: currentCategory} | filter:query" class="col-md-6 col-lg-4 post-container" >
+					<a href="#/news/{{item.id}}" class="">
+						<h4>{{item.webTitle}}</h4>
+					</a>
+
+					<p class="text-muted">
+						<span><em>{{item.webPublicationDate | date:'longDate'}}</em></span>
+						<span>-</span>
+						<span><strong>{{item.sectionName}}</strong></span>			
+					</p>
+
+					<div class="post-thumb "> 
+						<img  ng-src={{item.fields.thumbnail}} alt="">
+					</div>
+					<div class="post-content"> 
+						<p ng-bind-html="item.fields.trailText"></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div> 
+
+	<div class="footer">
+		<p>Newspicker footer</a></p>
+	</div>
+
+</div>
