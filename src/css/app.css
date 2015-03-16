@@ -27,3 +27,13 @@
     padding: 10px 12px;
     pointer-events: none;
 }
+
+.GithubLink a{
+	color: #5b5b5b;
+	float: right;
+	margin-top: 14px;
+}
+.GithubLinkL a:hover {
+	color: #5b5b5b;
+	text-decoration: none;
+}
