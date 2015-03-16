@@ -2,14 +2,9 @@
     float: left;
     margin: 3px 15px 10px 0px;
 }
-/*.post-thumb img {
-    display: block
-}*/
 
 .post-container {
 	overflow: hidden;
-	/*float:left;*/
-	/*display: inline-block;*/
 	min-height: 283px;
 }
 

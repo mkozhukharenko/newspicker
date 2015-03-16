@@ -2,18 +2,12 @@
 
 var newspickerControllers = angular.module('newspickerControllers', ['ui.bootstrap', 'ngSanitize'])
 
-// newspickerControllers.controller('MainCtrl', 
-// 	function ($scope) {
-// 	});
-
-
 //----------------------------------------------------------------------------------------------
 //                          GETTING NEWS LIST
 //----------------------------------------------------------------------------------------------
 newspickerControllers.controller('datepickerCtrl', ['$scope', '$filter', 'NewsList',
 	function ($scope, $filter, NewsList) {
 		$scope.format = 'longDate';
-
 		$scope.dt = new Date();	
 
 		$scope.$watch('dt', function(newValue, oldValue) {
@@ -45,24 +39,7 @@ newspickerControllers.controller('datepickerCtrl', ['$scope', '$filter', 'NewsLi
 			// console.log('$scope.categories',$scope.categories);
 			// console.log('$scope.currentCategory',$scope.currentCategory);
 		}
-		
-
-
-		// $scope.items = [
-		//     'The first choice!',
-		//     'And another choice for you.',
-		//     'but wait! A third!'
-		//  ];
-
-
-			// $scope.open = function($event) {
-			// 	$event.preventDefault();
-			// 	$event.stopPropagation();
-			// 	$scope.opened = true;
-			// };
 		}]);
-
-
               
 //-----------------CONFIGURATION OF THE DATEPICKER----------------------------
 newspickerControllers.config(['datepickerConfig', 
@@ -71,11 +48,6 @@ newspickerControllers.config(['datepickerConfig',
 		datepickerConfig.maxDate = new Date();
 		datepickerConfig.startingDay = "1";
 	}]);
-
-
-// newspickerControllers.controller('getNewsCtrl', ['$scope',
-// 	function($scope, getNewsService) {
-// 	}]);
 
 
 //----------------------------------------------------------------------------------------------
@@ -90,6 +62,7 @@ newspickerControllers.controller('newsDetailsCtrl', ['$scope', '$routeParams', '
 			$scope.detailedNews = res.response.content;
 			console.log('$scope.foo',$scope.foo);
 		});	
+		
 		// ********** ---  http request in servise ---- **********
 		// var id = $routeParams.newsId;		
 		// singleNews.sendRequest(id, function (data) {
@@ -97,49 +70,7 @@ newspickerControllers.controller('newsDetailsCtrl', ['$scope', '$routeParams', '
 			// console.log('$scope.details',$scope.details); // undefined
 		// })
 
-
-		// ------------- HTTP reques inside controller ---------------
-		// $http.get('http://content.guardianapis.com/'+ 
-					// $routeParams.newsId + 
-					// '?api-key=qfz35s8d5vk4xwm237brcfzw&show-related-content=true'+
-					// '&show-fields=headline,trailText,main,firstPublicationDate,body,publication,shortUrlall')	
-		// .success(function(data) {
-			// $scope.detailedNews = data.response.content;
-			// console.log('$scope.detailedNews',$scope.detailedNews);
-		// });
-
-
-		// ------- edit angular routes ---------------
-		// replace(/%2F/gi, '/').
-		
 	}]);
 
-
-
-// 'http://content.guardianapis.com/
-// money/2015/mar/14/dear-jeremy-work-issues-solved
 // ?api-key=qfz35s8d5vk4xwm237brcfzw
-// &show-fields=headline,trailText,main,firstPublicationDate,body,publication,shortUrlall'
 //  http://explorer.content.guardianapis.com/us-news/2015/mar/13/koch-industries-refuses-senators-climate-investigation?api-key=qfz35s8d5vk4xwm237brcfzw&show-fields=all
-
-
-
-// newspickerControllers.controller('getNewsCtrl', ['$scope', 'getNewsService',
-// 	function($scope, getNewsService) {
-// 		$scope.news = getNewsService.news;
-// 		console.log('$scope.news',$scope.news);
-
-// 		getNewsService.sendRequest($scope.formatedDate).then(function(d) {
-// 			$scope.news = d.results;
-// 			console.log();
-// 		});
-
-// 		$scope.getNews = function () {
-// 			$http.get('http://content.guardianapis.com/search?api-key=qfz35s8d5vk4xwm237brcfzw&show-fields=headline,standfirst,main,shortUrl,firstPublicationDate,thumbnail,trailText&page-size=10&from-date=2015-03-12&to-date=2015-03-12')
-// 			.success(
-// 				function(data) {
-// 	   			$scope.news = data.response.results;
-//    			});
-// 		}
-
-// 	}]);
