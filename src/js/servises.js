@@ -22,8 +22,9 @@ newspickerServices.factory('NewsList', ['$resource',
   }]);
 
 
+
 // newspickerServices.factory('singleNews', ['$http', function ($http) {
-//     return  {
+//     var objectWithGetter =   {
 //         sendRequest: function (id, callback) {
 //             $http.get('http://content.guardianapis.com/'+ id + 
 // 					'?api-key=qfz35s8d5vk4xwm237brcfzw&show-related-content=true'+
@@ -34,4 +35,7 @@ newspickerServices.factory('NewsList', ['$resource',
 //             });
 //           }
 //     };
+//     return objectWithGetter;
 // }]);
+
+// var news = singleNews.sendRequest();

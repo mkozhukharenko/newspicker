@@ -1,3 +1,20 @@
+body {
+    background: url("../img/light_toast.png") repeat scroll 0% 0% #F0F0F0
+}
+.header .navbar  {
+    background-color: rgb(39, 55, 108);
+}
+
+.container .navbar-header .navbar-brand,
+.container .navbar-nav li > a {
+    color: white;
+}
+
+.container .navbar-header .navbar-brand:hover,
+.container .navbar-nav li > a:hover {
+    color: #C0BFBF;
+}
+
 .post-thumb {
     float: left;
     margin: 3px 15px 10px 0px;
@@ -24,11 +41,11 @@
 }
 
 .GithubLink a{
-	color: #5b5b5b;
+	color: white;
 	float: right;
 	margin-top: 14px;
 }
 .GithubLinkL a:hover {
-	color: #5b5b5b;
+	color: #C0BFBF;
 	text-decoration: none;
 }

@@ -16,7 +16,7 @@ newspickerControllers.controller('datepickerCtrl', ['$scope', '$filter', 'NewsLi
 
 		function sendRequest (newValue) {
 			$scope.formatedDate = $filter('date')(newValue, 'yyyy-MM-dd'); // 2010-07-20T10:00:00+05:00		
-
+			
 			NewsList.get({fromDate: $scope.formatedDate, toDate: $scope.formatedDate, pageSize: '10'}, function(res) {
 				$scope.news = res.response.results;
 				fillArrayWithTheCategories($scope.news);
@@ -74,3 +74,28 @@ newspickerControllers.controller('newsDetailsCtrl', ['$scope', '$routeParams', '
 
 // ?api-key=qfz35s8d5vk4xwm237brcfzw
 //  http://explorer.content.guardianapis.com/us-news/2015/mar/13/koch-industries-refuses-senators-climate-investigation?api-key=qfz35s8d5vk4xwm237brcfzw&show-fields=all
+
+// newspickerControllers.directive("enter", function() {
+//     return function(scope, element) {
+//         element.bind("mouseenter", function() {
+//             console.log("I'm inside of you!");
+//         });
+//         console.log('ddddddddd');
+//     };
+// });
+
+newspickerControllers.directive('enter', function() {
+   return {
+          restrict: 'A',
+          // scope: {
+          //   enter: '&'
+          // },
+          link: function(scope, element, attrs){
+            console.log("hello world")
+                       
+          	element.bind("mouseenter", function() {
+            	console.log("I'm inside of you!");
+        	});
+          }  
+   };
+});
