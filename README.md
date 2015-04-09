@@ -12,7 +12,7 @@ Application provide next functionality:
 #### Used technologies
 Application's been made using:
 + angular 1.3.14 (plus resource, route, sanitize)
-+ angular UI
++ angular UI: bootstrap
 
 #### Used API
 News is retrieving from the [The guardian][2]  using theirs [APIs][3].
